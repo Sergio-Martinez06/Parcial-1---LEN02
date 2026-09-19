@@ -16,3 +16,26 @@ suma_horas = 0.0
 
 contador = 0
 
+while contador < N and vehiculos_registrados < CUPOS_MAXIMOS:
+    contador = contador + 1
+    print("\n--- Vehículo", contador, "de", N, "---")
+
+    placa = input("Placa: ")
+    tipo_usuario = input("Tipo de usuario (E/D/V): ")
+    hora_entrada = int(input("Hora de entrada (0-23): "))
+    horas_permanencia = float(input("Horas que permanecerá parqueado: "))
+
+    if hora_entrada < 0 or hora_entrada > 23:
+        print("ERROR: hora de entrada inválida. Este vehículo no se contará en las estadísticas.")
+        continue
+
+    if horas_permanencia <= 0 or type(horas_permanencia) not in [int, float]:
+        print("ERROR: horas de permanencia inválidas (negativas o cero). Registro rechazado.")
+        continue
+
+    if tipo_usuario != "E" and tipo_usuario != "D" and tipo_usuario != "V":
+        print("ADVERTENCIA: tipo de usuario no reconocido, se tratará como visitante por defecto.")
+        tipo_usuario = "V"
+    
+
+
