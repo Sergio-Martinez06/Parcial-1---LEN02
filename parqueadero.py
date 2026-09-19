@@ -1,3 +1,9 @@
 CUPOS_MAXIMOS = 30
 
 N = int(input("¿Cuántos vehículos se van a registrar hoy? "))
+
+sabado_texto = input("¿Es sábado? (True/False): ")
+es_sabado = sabado_texto == "True" or sabado_texto == "true"
+if type(sabado_texto) != bool:
+    print("ERROR: valor de 'es_sabado' inválido. Se asumirá que no es sábado.")
+    es_sabado = False
