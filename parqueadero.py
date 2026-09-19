@@ -26,7 +26,7 @@ while contador < N and vehiculos_registrados < CUPOS_MAXIMOS:
     hora_entrada = int(input("Hora de entrada (0-23): "))
     horas_permanencia = float(input("Horas que permanecerá parqueado: "))
 
-    if hora_entrada < 0 or hora_entrada > 23:
+    if hora_entrada < 0 or hora_entrada > 23 or type(hora_entrada) not in [int, float]:
         print("ERROR: hora de entrada inválida. Este vehículo no se contará en las estadísticas.")
         continue
 
@@ -37,6 +37,5 @@ while contador < N and vehiculos_registrados < CUPOS_MAXIMOS:
     if tipo_usuario != "E" and tipo_usuario != "D" and tipo_usuario != "V":
         print("ADVERTENCIA: tipo de usuario no reconocido, se tratará como visitante por defecto.")
         tipo_usuario = "V"
-    
 
 
