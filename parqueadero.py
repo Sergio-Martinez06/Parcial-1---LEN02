@@ -80,5 +80,14 @@ if vehiculos_registrados > 0:
     promedio_horas = suma_horas / vehiculos_registrados
 else:
     promedio_horas = 0.0
+ocupacion = (vehiculos_registrados / CUPOS_MAXIMOS) * 100
+print("\n====== RESUMEN DEL DIA ======")
+print("Vehiculos registrados:", vehiculos_registrados, "/", CUPOS_MAXIMOS)
+print("Ocupacion:", round(ocupacion, 1), "%")
+print("Recaudo total: $" + str(round(total_recaudado, 2)))
+print("Estudiantes:", total_estudiantes, "| Docentes:", total_docentes, "| Visitantes:", total_visitantes)
+print("Promedio de permanencia:", round(promedio_horas, 2), "horas")
+print("================================")
+
 
 
